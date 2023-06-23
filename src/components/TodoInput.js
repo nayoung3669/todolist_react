@@ -19,9 +19,9 @@ const TodoInputBlock = styled.form`
     input {
         min-width: 100px;
         height: 30px;
-        width: 35%;
+        width: 20rem;
         margin-right: 100px;
-        border-radius: 10px;
+        border-radius: 15px;
         border: 2px solid black;
     }
 
@@ -29,7 +29,7 @@ const TodoInputBlock = styled.form`
         margin-right: 20px;
         margin-bottom: 2px;
         height: 35px;
-        width: 13%;
+        width: 6rem;
         border-radius: 10px;
         border: none;
         font-weight: 600;
@@ -38,7 +38,7 @@ const TodoInputBlock = styled.form`
     }
 
     & + & {
-        margin-left : 30px;
+        margin-left : 20px;
     }
 `
 
@@ -53,7 +53,7 @@ const TodoInput = ({onAdd}) => {
         const {name, value} = e.target
         setTodo({
             ...todo,
-            [name] : value
+            [name] : [value]
         })
     },[todo])
 
@@ -66,7 +66,7 @@ const TodoInput = ({onAdd}) => {
     return (
         <TodoInputBlock onSubmit={(e) => onSubmit(e)}>
             <p>Title: </p>
-            <input type="text" name="title" value={todo.title} onChange={(e) => onChange(e)}/>
+            <input type="text" name="title" value={todo.title} onChange={(e) => onChange(e)} />
             <p>Todo: </p>
             <input type="text" name="text" value={todo.text} onChange={(e) => onChange(e)}/>
             <button type="submit" >ADD</button>

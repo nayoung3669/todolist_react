@@ -33,7 +33,7 @@ const TodoItemBlock = styled.div`
             font-size: 0.8rem;
             border: 1px solid lightgray;
             border-radius : 7px;
-            margin: 3px;
+            margin: 1.8px;
             cursor: pointer;
         }
         .delete {
