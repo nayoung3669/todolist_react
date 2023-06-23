@@ -6,7 +6,8 @@ const TemplateBlock = styled.div`
     align-items: center;
     background-color: #f6f6f6;
     width: 70%;
-    max-width: 900px;
+    min-width: 670px;
+    max-width: 1000px;
     height: 1200px;
     margin-top: 2rem;
     border-radius: 20px;
@@ -26,10 +27,6 @@ const TemplateBlock = styled.div`
         background-color: #4F709C;
         font-size: 2rem;
         font-weight: 600;
-    }
-
-    @media screen and (max-width: 768px) {
-        flex-direction: column;
     }
 `
 

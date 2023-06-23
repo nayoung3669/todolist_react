@@ -20,18 +20,18 @@ const ListBlock = styled.div`
 
 `
 
-const WorkingList = ({todos, onDelete, onToggle}) => {
-    const working = todos.filter((todo) => todo.done === false)
+const TodoList = ({todos, state, onDelete, onToggle}) => {
+
     return (
         <ListBlock>
-            <p className="working">Working...🔥</p>
+            <p className="working">{state}</p>
             <div className="todos">
-                {working.map((todo) => {
-                    return <TodoItem todo={todo} onDelete={onDelete} onToggle={onToggle}/>
+                {todos.map((todo) => {
+                    return <TodoItem todo={todo} state={state} onDelete={onDelete} onToggle={onToggle}/>
                 })}
             </div>
         </ListBlock>
     )
 }
 
-export { WorkingList, ListBlock }
+export { TodoList }

@@ -1,9 +1,8 @@
 import { useState } from 'react';
 import './App.css';
-import DoneList from './components/DoneList';
 import TodoInput from './components/TodoInput';
 import TodoTemplate from './components/TodoTemplate';
-import { WorkingList } from './components/WorkingList';
+import { TodoList } from './components/TodoList';
 import { useRef } from 'react';
 import { useCallback } from 'react';
 
@@ -34,8 +33,8 @@ function App() {
     <div className="App">
       <TodoTemplate>
         <TodoInput nextId={nextId} onAdd={onAdd}/>
-        <WorkingList todos={todos} onDelete={onDelete} onToggle={onToggle}/>
-        <DoneList todos={todos} onDelete={onDelete} onToggle={onToggle}/>
+        <TodoList todos={todos.filter((todo) => todo.done === false)} state={"Working..."} onDelete={onDelete} onToggle={onToggle}/> 
+        <TodoList todos={todos.filter((todo) => todo.done === true)} state={"Done!"} onDelete={onDelete} onToggle={onToggle}/> 
       </TodoTemplate>
     </div>
   );
