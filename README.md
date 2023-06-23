@@ -1,19 +1,20 @@
-# React Todo-List
+# React Todo-List ✍🏻
 
 <br />
 
-## Components
+<img src="src/images/image.png">
 
 <br />
+<br />
 
-#### TodoTemplate.js
+## 💻 Components
+
+<br/>
+
+TodoTemplate.js
 
 &emsp; ㄴ TodoInput.js
 
-&emsp; ㄴ WorkingList.js
-
-&emsp; &emsp; ㄴ TodoItem.js
-
-&emsp; ㄴ DoneList.js
+&emsp; ㄴ TodoList.js
 
 &emsp; &emsp; ㄴ TodoItem.js

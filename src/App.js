@@ -33,8 +33,8 @@ function App() {
     <div className="App">
       <TodoTemplate>
         <TodoInput nextId={nextId} onAdd={onAdd}/>
-        <TodoList todos={todos.filter((todo) => todo.done === false)} state={"Working..."} onDelete={onDelete} onToggle={onToggle}/> 
-        <TodoList todos={todos.filter((todo) => todo.done === true)} state={"Done!"} onDelete={onDelete} onToggle={onToggle}/> 
+        <TodoList todos={todos.filter(todo => todo.done === false)} state={"Working...✍🏻"} onDelete={onDelete} onToggle={onToggle}/> 
+        <TodoList todos={todos.filter(todo => todo.done === true)} state={"Done!🥳"} onDelete={onDelete} onToggle={onToggle}/> 
       </TodoTemplate>
     </div>
   );

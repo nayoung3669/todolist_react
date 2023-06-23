@@ -54,7 +54,7 @@ const TodoItem = ({todo, state, onDelete, onToggle}) => {
             <p className="text">{text}</p>
             <div className="buttons">
                 <button className="delete" onClick={() => onDelete(id)}>DELETE</button>
-                <button className="done" onClick={() => onToggle(id)}>{state === "Working..." ? "DONE" : "CANCEL"}</button>
+                <button className="done" onClick={() => onToggle(id)}>{state === "Working...✍🏻" ? "DONE" : "CANCEL"}</button>
             </div>
         </TodoItemBlock>
     )
