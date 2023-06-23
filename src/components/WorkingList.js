@@ -9,13 +9,13 @@ const ListBlock = styled.div`
         margin-top:30px;
         font-size: 1.5rem;
         text-align: start;
+
     }
     .todos {
-        overflow-x: scroll;
-        padding-left: 40px;
         display: flex;
         flex-direction: row;
         margin-bottom: 40px;
+        flex-wrap: wrap;
     }
 
 `

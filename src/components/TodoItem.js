@@ -10,9 +10,10 @@ const TodoItemBlock = styled.div`
     background-color: white;
     border : 1px solid lightgray;
     border-radius: 10px;
+    margin: 5px;
 
     p {
-        margin: 10px;
+        margin: 9px;
     }
     .title {
         font-size: 1.2rem;
@@ -43,9 +44,6 @@ const TodoItemBlock = styled.div`
             color: blue;
         }
 
-    }
-    & + & {
-        margin-left: 8px;
     }
 `
 

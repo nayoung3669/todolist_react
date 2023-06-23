@@ -17,6 +17,7 @@ const TodoInputBlock = styled.form`
     }
 
     input {
+        min-width: 100px;
         height: 30px;
         width: 35%;
         margin-right: 100px;
