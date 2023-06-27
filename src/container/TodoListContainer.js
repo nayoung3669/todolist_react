@@ -1,7 +1,6 @@
 import { styled } from "styled-components";
 import TodoItem from "../components/TodoItem";
-import { useCallback, useRef, useState } from "react";
-import TodoInput from "../components/TodoInput";
+import { useCallback, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const ListBlock = styled.div`
@@ -26,22 +25,10 @@ const ListBlock = styled.div`
 `;
 
 const TodoList = () => {
-  const nextId = useRef(0);
   const [todos, setTodos] = useState([]);
   const navigate = useNavigate();
   const workingText = "Working...✍🏻";
   const doneText = "Done ! 🎉";
-
-  const onAdd = useCallback((todo) => {
-    nextId.current += 1;
-    const newTodo = {
-      id: nextId.current,
-      title: todo.title,
-      text: todo.text,
-      done: false,
-    };
-    setTodos((todos) => todos.concat(newTodo));
-  }, []);
 
   const onDelete = useCallback((id) => {
     setTodos((todos) => todos.filter((todo) => todo.id !== id));
@@ -57,7 +44,6 @@ const TodoList = () => {
 
   return (
     <>
-      <TodoInput onAdd={onAdd} />
       <ListBlock>
         <p className="working">{workingText}</p>
         <div className="todos">

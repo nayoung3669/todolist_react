@@ -34,7 +34,7 @@ const TodoInputBlock = styled.form`
     border-radius: 10px;
     border: none;
     font-weight: 600;
-    background-color: #808080;
+    background-color: #4f709c;
     color: white;
   }
 
