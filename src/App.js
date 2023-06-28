@@ -1,7 +1,8 @@
 import Router from "./shared/Router.js";
+import "./styles/App.css";
 function App() {
   return (
-    <div style={{ display: "flex", justifyContent: "center" }}>
+    <div className="App">
       <Router />
     </div>
   );

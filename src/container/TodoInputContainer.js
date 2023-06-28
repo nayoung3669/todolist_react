@@ -8,7 +8,7 @@ const TodoInputContainerBlock = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 95%;
+  width: 80%;
   border-bottom: 3px solid lightgray;
 
   button {

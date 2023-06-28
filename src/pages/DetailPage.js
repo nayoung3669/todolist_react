@@ -1,7 +1,7 @@
 import React from "react";
 import TodoItemDetail from "../components/TodoItemDetail";
 import { useParams } from "react-router-dom";
-import TodoTemplate from "../components/TodoTemplate";
+import TodoTemplate from "../layout/TodoTemplate";
 
 const DetailPage = () => {
   const { id } = useParams();
