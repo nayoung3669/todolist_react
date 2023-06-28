@@ -6,7 +6,6 @@ const REMOVE = "todos/REMOVE";
 export const changeInput = (input) => ({ type: CHANGE_INPUT, input });
 let nextId = 2;
 export const add = (todo) => {
-  console.log(todo);
   return {
     type: ADD,
     todo: {
@@ -45,13 +44,13 @@ const todos = (state = initialState, action) => {
       return {
         ...state,
         todos: state.todos.map((todo) =>
-          todo.id === action.id ? { done: !todo.done } : todo,
+          todo.id === action.id ? { ...todo, done: !todo.done } : todo,
         ),
       };
     case REMOVE:
       return {
         ...state,
-        todos: state.todos.filter((todo) => action.id === todo.id),
+        todos: state.todos.filter((todo) => todo.id !== action.id),
       };
     default:
       return state;

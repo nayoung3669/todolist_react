@@ -1,7 +1,5 @@
 import { styled } from "styled-components";
 import TodoItem from "../components/TodoItem";
-import { useCallback, useState } from "react";
-import { useNavigate, useSearchParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { remove, toggle } from "../redux/modules/todos";
 

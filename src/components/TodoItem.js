@@ -53,7 +53,7 @@ const TodoItemBlock = styled.div`
     .delete {
       cursor: pointer;
       width: 24px;
-      color: #efb1b1;
+      color: #f78888;
     }
     .delete:hover {
       fill: #fb2f2f;
