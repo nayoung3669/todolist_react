@@ -9,7 +9,7 @@ const DetailBlock = styled.div`
 `;
 
 const TodoItemDetail = ({ id }) => {
-  return <DetailBlock>TodoItemDetail</DetailBlock>;
+  return <DetailBlock>TodoItemDetail{id}</DetailBlock>;
 };
 
 export default TodoItemDetail;

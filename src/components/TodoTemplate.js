@@ -24,7 +24,7 @@ const TemplateBlock = styled.div`
     margin-bottom: 13px;
     color: #f6f6f6;
     border-radius: 10px;
-    background-color: #808080;
+    background-color: #333333;
     font-size: 2rem;
     font-weight: 600;
   }

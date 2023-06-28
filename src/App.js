@@ -1,12 +1,9 @@
 import Router from "./shared/Router.js";
-import MainPage from "./pages/MainPage";
-
 function App() {
   return (
-    <>
-      <MainPage />
+    <div style={{ display: "flex", justifyContent: "center" }}>
       <Router />
-    </>
+    </div>
   );
 }
 

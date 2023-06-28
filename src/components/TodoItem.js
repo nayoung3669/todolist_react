@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { css, styled } from "styled-components";
 
 const TodoItemBlock = styled.div`
@@ -19,12 +20,17 @@ const TodoItemBlock = styled.div`
   padding: 1em;
   box-shadow: 3px 3px 5px rgba(162, 162, 162, 0.7);
 
+  .textBox {
+    cursor: pointer;
+
+    min-height: 120px;
+  }
+
   ${({ id }) =>
     Number(id) % 2 === 0 &&
     css`
       background-color: #faf1fa;
     `}
-
   p {
     margin: 10px;
   }
@@ -39,42 +45,45 @@ const TodoItemBlock = styled.div`
 
   .icons {
     position: absolute;
-    top: 73%;
-    left: 60%;
+    top: 81%;
+    left: 66%;
     display: flex;
     justify-content: space-between;
-    padding-top: 10px;
-    height: 30px;
 
     .delete {
-      width: 26px;
-      color: #f36e6e;
+      cursor: pointer;
+      width: 24px;
+      color: #efb1b1;
     }
     .delete:hover {
-      fill: #f36e6e;
+      fill: #fb2f2f;
     }
     .done {
-      margin-left: 10px;
-      width: 28px;
-      color: #8181eb;
+      cursor: pointer;
+      margin-left: 5px;
+      width: 25px;
+      color: #95b9f6;
     }
   }
 `;
 
-const TodoItem = ({ todo, onDelete, onToggle }) => {
-  const { id, title, text } = todo;
+const TodoItem = ({ todo, onRemove, onToggle }) => {
+  const navigate = useNavigate();
+  const { id, title, text, done } = todo;
 
   return (
     <TodoItemBlock id={id}>
-      <p className="title">{title}</p>
-      <p className="text">{text}</p>
+      <div className="textBox" onClick={() => navigate(`${id}`)}>
+        <p className="title">{title}</p>
+        <p className="text">{text}</p>
+      </div>
       <div className="icons">
-        <div className="delete" onClick={() => onDelete(id)}>
+        <div className="delete" onClick={() => onRemove(id)}>
           {trashIcon()}
         </div>
-        <di className="done" onClick={() => onToggle(id)}>
-          {doneIcon()}
-        </di>
+        <div className="done" onClick={() => onToggle(id)}>
+          {done === true ? backIcon() : doneIcon()}
+        </div>
       </div>
     </TodoItemBlock>
   );
@@ -113,6 +122,24 @@ const doneIcon = () => {
         strokeLinecap="round"
         strokeLinejoin="round"
         d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+      />
+    </svg>
+  );
+};
+
+const backIcon = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      strokeWidth={1.5}
+      stroke="currentColor"
+      className="w-6 h-6">
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M9 15L3 9m0 0l6-6M3 9h12a6 6 0 010 12h-3"
       />
     </svg>
   );

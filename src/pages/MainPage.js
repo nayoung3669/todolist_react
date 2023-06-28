@@ -1,14 +1,13 @@
 import React from "react";
 import TodoTemplate from "../components/TodoTemplate";
-import { TodoList } from "../container/TodoListContainer";
-
+import TodoInputContainer from "../container/TodoInputContainer";
+import TodoListContainer from "../container/TodoListContainer";
 const MainPage = () => {
   return (
-    <div>
-      <TodoTemplate>
-        <TodoList />
-      </TodoTemplate>
-    </div>
+    <TodoTemplate>
+      <TodoInputContainer />
+      <TodoListContainer />
+    </TodoTemplate>
   );
 };
 

@@ -1,15 +1,13 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import TodoTemplate from "../components/TodoTemplate";
+import { Route, Routes } from "react-router-dom";
 import DetailPage from "../pages/DetailPage";
+import MainPage from "../pages/MainPage";
 
 const Router = () => {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<TodoTemplate />} />
-        <Route path=":id" element={<DetailPage />} />
-      </Routes>
-    </BrowserRouter>
+    <Routes>
+      <Route path="/" element={<MainPage />} />
+      <Route path=":id" element={<DetailPage />} />
+    </Routes>
   );
 };
 

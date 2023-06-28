@@ -1,92 +1,38 @@
 import React from "react";
-import { useCallback, useState } from "react";
 import { styled } from "styled-components";
 
-const TodoInputBlock = styled.form`
+const TodoInputBlock = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   height: 65px;
-  width: 90%;
-  border-bottom: 2px solid lightgray;
-  padding-bottom: 10px;
+  width: 80%;
 
   p {
     font-size: 1.2rem;
-    margin-right: 20px;
+    margin-right: 10px;
   }
-
   input {
+    padding-left: 10px;
     min-width: 100px;
     height: 30px;
-    width: 20rem;
-    margin-right: 100px;
+    width: 23rem;
+    margin-right: 2rem;
     border-radius: 15px;
     border: 2px solid black;
   }
-
-  button {
-    font-family: "Courier New", Courier, monospace;
-    margin-right: 20px;
-    margin-bottom: 2px;
-    height: 35px;
-    width: 6rem;
-    border-radius: 10px;
-    border: none;
-    font-weight: 600;
-    background-color: #4f709c;
-    color: white;
-  }
-
   & + & {
     margin-left: 20px;
   }
 `;
 
-const TodoInput = ({ onAdd }) => {
-  const [todo, setTodo] = useState({
-    id: 0,
-    title: "",
-    text: "",
-  });
-
-  const onChange = useCallback(
-    (e) => {
-      const { name, value } = e.target;
-      setTodo({
-        ...todo,
-        [name]: [value],
-      });
-    },
-    [todo],
-  );
-
-  const onSubmit = useCallback(
-    (e) => {
-      e.preventDefault();
-      !todo.title || !todo.text ? alert("내용을 입력하세요.") : onAdd(todo);
-      setTodo({ title: "", text: "" });
-    },
-    [todo, onAdd],
-  );
-
+const TodoInput = ({ title, text, onChange }) => {
   return (
-    <TodoInputBlock onSubmit={(e) => onSubmit(e)}>
+    <TodoInputBlock>
       <p>Title: </p>
-      <input
-        type="text"
-        name="title"
-        value={todo.title}
-        onChange={(e) => onChange(e)}
-      />
+      <input type="text" name="title" value={title} onChange={onChange} />
       <p>Todo: </p>
-      <input
-        type="text"
-        name="text"
-        value={todo.text}
-        onChange={(e) => onChange(e)}
-      />
-      <button type="submit">ADD</button>
+      <input type="text" name="text" value={text} onChange={onChange} />
     </TodoInputBlock>
   );
 };
