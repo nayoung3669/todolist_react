@@ -66,12 +66,7 @@ const TodoListContainer = () => {
             .filter((todo) => todo.done === true)
             .map((todo) => {
               return (
-                <TodoItem
-                  todo={todo}
-                  onRemove={onRemove}
-                  onToggle={onToggle}
-                  inDetail={false}
-                />
+                <TodoItem todo={todo} onRemove={onRemove} onToggle={onToggle} />
               );
             })}
         </div>

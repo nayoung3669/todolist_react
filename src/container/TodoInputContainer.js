@@ -9,6 +9,7 @@ const TodoInputContainerBlock = styled.div`
   justify-content: center;
   align-items: center;
   width: 80%;
+
   button {
     font-family: "Gowun Dodum", sans-serif;
     cursor: pointer;
@@ -20,7 +21,7 @@ const TodoInputContainerBlock = styled.div`
     border: none;
     font-size: 1rem;
     font-weight: 600;
-    background-color: #333333;
+    background-color: #5d5d5d;
     color: white;
   }
 `;
