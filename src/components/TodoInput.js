@@ -10,11 +10,10 @@ const TodoInputBlock = styled.div`
 
   p {
     font-size: 1.2rem;
-    margin-right: 10px;
+    margin-right: 20px;
   }
   input {
-    padding-left: 10px;
-    min-width: 100px;
+    min-width: 90px;
     height: 30px;
     width: 23rem;
     margin-right: 2rem;
@@ -29,9 +28,9 @@ const TodoInputBlock = styled.div`
 const TodoInput = ({ title, text, onChange }) => {
   return (
     <TodoInputBlock>
-      <p>Title: </p>
+      <p>Title </p>
       <input type="text" name="title" value={title} onChange={onChange} />
-      <p>Todo: </p>
+      <p>Todo </p>
       <input type="text" name="text" value={text} onChange={onChange} />
     </TodoInputBlock>
   );

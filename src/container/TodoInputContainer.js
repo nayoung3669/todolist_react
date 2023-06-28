@@ -9,17 +9,16 @@ const TodoInputContainerBlock = styled.div`
   justify-content: center;
   align-items: center;
   width: 80%;
-  border-bottom: 3px solid lightgray;
-
   button {
-    font-family: "Courier New", Courier, monospace;
+    font-family: "Gowun Dodum", sans-serif;
+    cursor: pointer;
     margin-right: 20px;
     margin-bottom: 2px;
     height: 36px;
     width: 5rem;
     border-radius: 15px;
     border: none;
-    font-size: 1.05rem;
+    font-size: 1rem;
     font-weight: 600;
     background-color: #333333;
     color: white;

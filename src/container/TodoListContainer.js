@@ -6,6 +6,7 @@ import { remove, toggle } from "../redux/modules/todos";
 const ListBlock = styled.div`
   width: 90%;
   border-bottom: 1px solid lightgray;
+  height: 360px;
   .progress {
     padding-left: 20px;
     margin-top: 30px;
@@ -13,10 +14,16 @@ const ListBlock = styled.div`
     text-align: start;
   }
   .todos {
+    width: 100%;
+    height: 80%;
     display: flex;
     flex-direction: row;
     margin-bottom: 40px;
     flex-wrap: wrap;
+    overflow-y: scroll;
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
   .todos:nth-child(even) {
     background-color: #f6f6f6;
@@ -42,7 +49,12 @@ const TodoListContainer = () => {
             .filter((todo) => todo.done === false)
             .map((todo) => {
               return (
-                <TodoItem todo={todo} onRemove={onRemove} onToggle={onToggle} />
+                <TodoItem
+                  todo={todo}
+                  onRemove={onRemove}
+                  onToggle={onToggle}
+                  inDetail={false}
+                />
               );
             })}
         </div>
@@ -54,7 +66,12 @@ const TodoListContainer = () => {
             .filter((todo) => todo.done === true)
             .map((todo) => {
               return (
-                <TodoItem todo={todo} onRemove={onRemove} onToggle={onToggle} />
+                <TodoItem
+                  todo={todo}
+                  onRemove={onRemove}
+                  onToggle={onToggle}
+                  inDetail={false}
+                />
               );
             })}
         </div>
