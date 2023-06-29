@@ -70,6 +70,24 @@ export const TodoItemBlock = styled.div`
       width: 20px;
     }
   }
+  @media screen and (max-width: 1180px) {
+    padding: 2px;
+    .paddingBox {
+      padding: 0.2rem;
+    }
+
+    .title {
+      font-size: 0.7rem;
+    }
+
+    .text {
+      font-size: 0.4rem;
+    }
+    .icons {
+      left: 50%;
+    }
+  }
+
   @keyframes vibration {
     from {
       transform: rotate(1deg);

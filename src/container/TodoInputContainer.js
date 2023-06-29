@@ -24,6 +24,12 @@ const TodoInputContainerBlock = styled.div`
     background-color: #5d5d5d;
     color: white;
   }
+
+  @media screen and (max-width: 1180px) {
+    flex-direction: column;
+    width: 500px;
+    margin-top: 30px;
+  }
 `;
 
 const TodoInputContainer = () => {

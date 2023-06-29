@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { backIcon, doneIcon, trashIcon } from "../assets/icons";
 import { TodoItemBlock } from "../styles/todos";
 
-const TodoItem = ({ todo, onRemove, onToggle, inDetail }) => {
+const TodoItem = ({ todo, onRemove, onToggle }) => {
   const navigate = useNavigate();
   const { id, title, text, done } = todo;
 

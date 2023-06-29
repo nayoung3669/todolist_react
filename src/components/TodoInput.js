@@ -3,20 +3,20 @@ import { styled } from "styled-components";
 
 const TodoInputBlock = styled.div`
   display: flex;
-  justify-content: center;
   align-items: center;
   height: 65px;
-  width: 80%;
+  width: 92%;
+  margin-left: 10px;
 
   p {
-    font-size: 1.2rem;
+    width: 60px;
+    font-size: 1rem;
     margin-right: 20px;
+    margin-right: 2rem;
   }
   input {
-    min-width: 90px;
+    width: 14rem;
     height: 30px;
-    width: 23rem;
-    margin-right: 2rem;
     border-radius: 15px;
     border: 2px solid black;
   }
@@ -28,9 +28,9 @@ const TodoInputBlock = styled.div`
 const TodoInput = ({ title, text, onChange }) => {
   return (
     <TodoInputBlock>
-      <p>Title </p>
+      <p>할 일:</p>
       <input type="text" name="title" value={title} onChange={onChange} />
-      <p>Todo </p>
+      <p>설명: </p>
       <input type="text" name="text" value={text} onChange={onChange} />
     </TodoInputBlock>
   );

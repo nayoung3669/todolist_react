@@ -9,9 +9,8 @@ const TemplateBlock = styled.div`
   justify-content: center;
   position: relative;
   background-color: #f6f6f6;
-  min-width: 1270px;
-  height: 1050px;
-  margin-top: 2rem;
+  width: 1215px;
+  height: 1030px;
   border-radius: 15px;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   font-weight: 600;
@@ -21,21 +20,22 @@ const TemplateBlock = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 8.6%;
-    height: 89.7%;
-    width: 100%;
+    margin-top: 9%;
+    height: 920px;
+    gap: 50px;
     color: #f6f6f6;
     border-bottom-left-radius: 8px;
     background-color: #7a7a7a;
     font-size: 1rem;
     font-weight: 600;
+    width: 200px;
 
     ${(props) => {
       props.detailed &&
         css`
           display: none;
         `;
-    }}
+    }};
   }
 
   .todoTitle {
@@ -56,6 +56,24 @@ const TemplateBlock = styled.div`
   .category {
     height: 30px;
     background-color: ;
+  }
+
+  @media screen and (max-width: 1180px) {
+    flex-direction: column;
+    width: 500px;
+
+    .todoTitle {
+      top: 0%;
+      font-size: 1.25rem;
+    }
+
+    .sidebar {
+      width: 100%;
+      height: 60px;
+      gap: 0px;
+      margin-top: 22px;
+      border-radius: 0;
+    }
   }
 `;
 
