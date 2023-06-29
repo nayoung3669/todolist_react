@@ -4,19 +4,20 @@
 
 <br />
 
-## 🎮 Project name: Todo-List ✍🏻
+<br />
 
-## 🕚 Project execution period : 2023.06.27 ~ 2023.06.29
+### 🕚 Project execution period : 2023.06.27 ~ 2023.06.29
 
 <br />
 
 ### 팀원 : [@nayoung3669](https://github.com/nayoung3669), [@taehyunkim3](https://github.com/taehyunkim3)
 
 <br />
+<br />
 
 #### 모바일 ver.
 
-<img src="src/images/mobile.png">
+<img src="src/images/mobile.png" width="550px">
 
 #### 데스크탑 ver.
 
