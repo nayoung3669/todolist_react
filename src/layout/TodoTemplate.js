@@ -62,18 +62,22 @@ const TemplateBlock = styled.div`
     flex-direction: column;
     width: 400px;
     overflow-y: scroll;
+    &::-webkit-scrollbar {
+      display: none;
+    }
 
     .todoTitle {
-      top: 10%;
-      font-size: 1.25rem;
+      margin: 0;
+      /* top: 9%; */
+      font-size: 1.4rem;
     }
 
     .sidebar {
-      margin-top: 210px;
+      /* margin-top: 190px; */
       width: 100%;
-      height: 68px;
+      height: 86px;
       gap: 0px;
-      font-size: 0.7rem;
+      font-size: 0.8rem;
       border-radius: 0;
       padding-top: 10px;
       margin-bottom: 10px;

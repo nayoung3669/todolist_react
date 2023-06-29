@@ -1,6 +1,7 @@
 import {
   faCircleCheck,
   faHourglass,
+  faHouse,
   faPenToSquare,
   faTrash,
 } from "@fortawesome/free-solid-svg-icons";
@@ -41,5 +42,11 @@ export const confirmIcon = () => {
       size="xl"
       style={{ color: "#ee9ff9" }}
     />
+  );
+};
+
+export const homeIcon = () => {
+  return (
+    <FontAwesomeIcon style={{ color: "#c7d6dd" }} icon={faHouse} size="2xl" />
   );
 };

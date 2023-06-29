@@ -7,6 +7,7 @@ import {
   confirmIcon,
   doneIcon,
   editIcon,
+  homeIcon,
   trashIcon,
 } from "../assets/icons";
 import { useState } from "react";
@@ -78,6 +79,13 @@ const DetailBlock = styled.div`
   .text {
     font-size: 1.2rem;
     margin: 30px 0px 0px 30px;
+  }
+
+  .home {
+    position: absolute;
+    top: -200%;
+    right: -10%;
+    cursor: pointer;
   }
 
   @media screen and (max-width: 1180px) {
@@ -153,6 +161,9 @@ const TodoItemDetail = ({ id }) => {
       <div className="textBox">
         <p className="title">{todoItem.title}</p>
         <p className="text">{todoItem.text}</p>
+      </div>
+      <div className="home" onClick={() => navigate("/")}>
+        {homeIcon()}
       </div>
       <div className="edit" onClick={() => setEditing(true)}>
         {editIcon()}
