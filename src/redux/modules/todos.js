@@ -1,15 +1,12 @@
+const EDIT = "todos/EDIT";
 const CHANGE_INPUT = "todos/CHANGE_INPUT";
 const ADD = "todos/ADD";
 const TOGGLE = "todos/TOGGLE";
 const REMOVE = "todos/REMOVE";
-const EDIT = "todos/EDIT";
 
-
-export const edit = (id, name, value) => ({
+export const edit = (input) => ({
   type: EDIT,
-  id,
-  name,
-  value,
+  input,
 });
 
 export const changeInput = (input) => ({ type: CHANGE_INPUT, input });
@@ -69,11 +66,11 @@ const initialState = {
 
 const todos = (state = initialState, action) => {
   switch (action.type) {
-    case EDIT:
+    case EDIT:   //->신설, 해당하는 항목만 대체하고 다른건 그대로인 배열을 새로 만들어서 넣어줘야함.
       return {
         ...state,
         todos: state.todos.map((todo) =>
-          todo.id === action.id ? { ...todo, [action.name]: action.value } : todo
+          todo.id === action.input.id ? action.input : todo
         ),
       };
     case CHANGE_INPUT:
