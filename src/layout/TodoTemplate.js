@@ -61,18 +61,19 @@ const TemplateBlock = styled.div`
   @media screen and (max-width: 1180px) {
     flex-direction: column;
     width: 400px;
+    overflow-y: scroll;
 
     .todoTitle {
-      top: 0%;
+      top: 10%;
       font-size: 1.25rem;
     }
 
     .sidebar {
-      margin: 0;
+      margin-top: 210px;
       width: 100%;
       height: 68px;
       gap: 0px;
-      font-size: 0.9rem;
+      font-size: 0.7rem;
       border-radius: 0;
       padding-top: 10px;
       margin-bottom: 10px;

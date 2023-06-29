@@ -79,6 +79,22 @@ const DetailBlock = styled.div`
     font-size: 1.2rem;
     margin: 30px 0px 0px 30px;
   }
+
+  @media screen and (max-width: 1180px) {
+    width: 18rem;
+    height: 10rem;
+    .title {
+      font-size: 1.2rem;
+      margin: 0;
+    }
+    .text {
+      font-size: 0.9rem;
+    }
+    .icons {
+      top: 78%;
+      left: 78%;
+    }
+  }
 `;
 
 const TodoItemDetail = ({ id }) => {
@@ -100,9 +116,8 @@ const TodoItemDetail = ({ id }) => {
   const onChangeInput = (e) => {
     const { name, value } = e.target;
     const updatedTodoItem = { ...todoItem, [name]: value };
-    dispatch(edit(updatedTodoItem));  // action creator -> edit으로 수정
+    dispatch(edit(updatedTodoItem)); // action creator -> edit으로 수정
   };
-
 
   const onConfirm = () => {
     navigate(`/${todoItem.id}`);
