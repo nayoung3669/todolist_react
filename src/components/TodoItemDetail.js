@@ -82,10 +82,10 @@ const DetailBlock = styled.div`
   }
 
   .home {
-    position: absolute;
-    top: -200%;
-    right: -10%;
     cursor: pointer;
+    position: absolute;
+    top: -105%;
+    right: -30%;
   }
 
   @media screen and (max-width: 1180px) {
@@ -101,6 +101,13 @@ const DetailBlock = styled.div`
     .icons {
       top: 78%;
       left: 78%;
+    }
+
+    .home {
+      position: absolute;
+      top: -200%;
+      right: -10%;
+      cursor: pointer;
     }
   }
 `;

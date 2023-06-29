@@ -14,7 +14,7 @@ const Sidebar = () => {
     <>
       {isNaN(params.id) && (
         <div className="sidebar">
-          <div className="category">오늘 날씨</div>
+          <div className="category">30℃ 맑음 ☀️</div>
           <div className="category">
             {year + "/" + month + "/" + date + " " + days[day] + "요일"}
           </div>
