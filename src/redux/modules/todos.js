@@ -4,7 +4,7 @@ const TOGGLE = "todos/TOGGLE";
 const REMOVE = "todos/REMOVE";
 
 export const changeInput = (input) => ({ type: CHANGE_INPUT, input });
-let nextId = 4;
+let nextId = 6;
 export const add = (todo) => {
   return {
     type: ADD,
@@ -27,20 +27,32 @@ const initialState = {
   todos: [
     {
       id: 1,
-      title: "리액트 숙련주차 강의🔥",
+      title: "리액트 숙련주차 강의 🔥",
       text: "들으면서 메모하기 ",
       done: false,
     },
     {
       id: 2,
-      title: " Redux 유튜브 강의🔥",
+      title: " Redux 유튜브 📖",
       text: "스터디 발표 준비",
       done: false,
     },
     {
       id: 3,
       title: "TIL 작성하기!",
-      text: "오늘 자정까지 완료📑",
+      text: "오늘 자정까지 완료 📑",
+      done: false,
+    },
+    {
+      id: 4,
+      title: "WIL 작성하기 💻",
+      text: "Virtual DOM 조사하기",
+      done: true,
+    },
+    {
+      id: 5,
+      title: "비동기처리 공부 ✍🏻",
+      text: "블로그 기록하기",
       done: false,
     },
   ],

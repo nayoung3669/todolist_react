@@ -8,7 +8,7 @@ const TodoItem = ({ todo, onRemove, onToggle, inDetail }) => {
   const { id, title, text, done } = todo;
 
   return (
-    <TodoItemBlock id={id} inDetail={inDetail}>
+    <TodoItemBlock id={id}>
       <div className="paddingBox">
         <div className="textBox" onClick={() => navigate(`${id}`)}>
           <p className="title">{title}</p>

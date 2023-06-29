@@ -88,8 +88,15 @@ const TodoItemDetail = ({ id }) => {
   const todos = useSelector(({ todos }) => todos.todos);
   const todoItem = todos.find((todo) => todo.id === Number(id));
 
-  const onRemove = (id) => dispatch(remove(id));
-  const onToggle = (id) => dispatch(toggle(id));
+  const onRemove = (id) => {
+    dispatch(remove(id));
+    navigate("/");
+  };
+  const onToggle = (id) => {
+    dispatch(toggle(id));
+    navigate("/");
+  };
+
   const onChangeInput = (e) => {
     const { name, value } = e.target;
     const updatedTodoItem = { ...todoItem, [name]: value };
@@ -138,10 +145,10 @@ const TodoItemDetail = ({ id }) => {
         {editIcon()}
       </div>
       <div className="icons">
-        <div className="delete" onClick={() => onRemove(id)}>
+        <div className="delete" onClick={() => onRemove(todoItem.id)}>
           {trashIcon()}
         </div>
-        <div className="done" onClick={() => onToggle(id)}>
+        <div className="done" onClick={() => onToggle(todoItem.id)}>
           {todoItem.done === true ? backIcon() : doneIcon()}
         </div>
       </div>

@@ -1,7 +1,6 @@
-import { faCaretRight } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useParams } from "react-router-dom";
 import { css, styled } from "styled-components";
+import Sidebar from "../components/Sidebar";
+import { useParams } from "react-router-dom";
 
 const TemplateBlock = styled.div`
   display: flex;
@@ -28,7 +27,7 @@ const TemplateBlock = styled.div`
     color: #f6f6f6;
     border-bottom-left-radius: 8px;
     background-color: #7a7a7a;
-    font-size: 1.4rem;
+    font-size: 1rem;
     font-weight: 600;
 
     ${(props) => {
@@ -61,23 +60,14 @@ const TemplateBlock = styled.div`
 `;
 
 const TodoTemplate = ({ children }) => {
-  const params = useParams();
+  const { id } = useParams();
+
   return (
     <TemplateBlock>
+      {isNaN(id) && <Sidebar />}
       <div className="todoTitle">
-        <p>Todo List</p>
+        <p>투두 리스트</p>
       </div>
-      {isNaN(params.id) && (
-        <div className="sidebar">
-          <div className="category">
-            진행 중 <FontAwesomeIcon icon={faCaretRight} />
-          </div>
-          <div className="category">
-            완료 <FontAwesomeIcon icon={faCaretRight} />
-          </div>
-        </div>
-      )}
-
       <div className="content">{children}</div>
     </TemplateBlock>
   );
