@@ -5,16 +5,17 @@ const TodoInputBlock = styled.div`
   display: flex;
   align-items: center;
   height: 65px;
-  width: 92%;
+  width: 95%;
   margin-left: 10px;
 
   p {
     width: 60px;
     font-size: 1rem;
-    margin-right: 20px;
-    margin-right: 2rem;
+    margin-right: 10px;
   }
+
   input {
+    margin-right: 4rem;
     width: 14rem;
     height: 30px;
     border-radius: 15px;
@@ -22,6 +23,16 @@ const TodoInputBlock = styled.div`
   }
   & + & {
     margin-left: 20px;
+  }
+
+  @media screen and (max-width: 1180px) {
+    width: 90%;
+    margin: 0;
+
+    input {
+      margin: 0;
+      margin-right: 15px;
+    }
   }
 `;
 

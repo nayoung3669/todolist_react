@@ -16,7 +16,7 @@ export const TodoItemBlock = styled.div`
     background-color: #fbf9d4;
     display: block;
     border: none;
-    height: 7.8em;
+    height: 8em;
     width: 100%;
     padding: 1em;
     box-shadow: 3px 3px 5px rgba(162, 162, 162, 0.38);

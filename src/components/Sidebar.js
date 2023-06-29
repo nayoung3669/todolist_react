@@ -11,7 +11,7 @@ const Sidebar = () => {
   let day = today.getDay();
 
   return (
-    <div className="sidebar">
+    <>
       {isNaN(params.id) && (
         <div className="sidebar">
           <div className="category">오늘 날씨</div>
@@ -20,7 +20,7 @@ const Sidebar = () => {
           </div>
         </div>
       )}
-    </div>
+    </>
   );
 };
 

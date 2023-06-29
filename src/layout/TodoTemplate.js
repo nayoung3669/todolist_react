@@ -9,8 +9,8 @@ const TemplateBlock = styled.div`
   justify-content: center;
   position: relative;
   background-color: #f6f6f6;
-  width: 1215px;
-  height: 1030px;
+  width: 1020px;
+  height: 1040px;
   border-radius: 15px;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   font-weight: 600;
@@ -20,8 +20,8 @@ const TemplateBlock = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 9%;
-    height: 920px;
+    margin-top: 10.9%;
+    height: 930px;
     gap: 50px;
     color: #f6f6f6;
     border-bottom-left-radius: 8px;
@@ -68,11 +68,14 @@ const TemplateBlock = styled.div`
     }
 
     .sidebar {
+      margin: 0;
       width: 100%;
-      height: 60px;
+      height: 68px;
       gap: 0px;
-      margin-top: 22px;
+      font-size: 0.9rem;
       border-radius: 0;
+      padding-top: 10px;
+      margin-bottom: 10px;
     }
   }
 `;
