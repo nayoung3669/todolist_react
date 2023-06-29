@@ -5,8 +5,8 @@
 #### ⚙️ Tools: React, Redux, JavaScript, Styled-component, CSS, HTML
 <br />
 
-### 팀원 : [@nayoung3669](https://github.com/nayoung3669), [@taehyunkim3](https://github.com/taehyunkim3)
-
+### 팀원 : 김나영 [@nayoung3669](https://github.com/nayoung3669), 김태현 [@taehyunkim3](https://github.com/taehyunkim3)
+#### 회고: (김나영)  https://nayoungkim00.tistory.com/91
 <br />
 
 #### 모바일 ver.
