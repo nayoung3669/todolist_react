@@ -1,18 +1,11 @@
 # React Todo-List ✍🏻
 
-### 배포 : https://todolist-react-jade.vercel.app/
-
-<br />
-
-<br />
-
+### 배포: https://todolist-react-jade.vercel.app/
 ### 🕚 Project execution period : 2023.06.27 ~ 2023.06.29
-
 <br />
 
 ### 팀원 : [@nayoung3669](https://github.com/nayoung3669), [@taehyunkim3](https://github.com/taehyunkim3)
 
-<br />
 <br />
 
 #### 모바일 ver.
