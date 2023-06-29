@@ -2,6 +2,15 @@ const CHANGE_INPUT = "todos/CHANGE_INPUT";
 const ADD = "todos/ADD";
 const TOGGLE = "todos/TOGGLE";
 const REMOVE = "todos/REMOVE";
+const EDIT = "todos/EDIT";
+
+
+export const edit = (id, name, value) => ({
+  type: EDIT,
+  id,
+  name,
+  value,
+});
 
 export const changeInput = (input) => ({ type: CHANGE_INPUT, input });
 let nextId = 6;
@@ -60,6 +69,13 @@ const initialState = {
 
 const todos = (state = initialState, action) => {
   switch (action.type) {
+    case EDIT:
+      return {
+        ...state,
+        todos: state.todos.map((todo) =>
+          todo.id === action.id ? { ...todo, [action.name]: action.value } : todo
+        ),
+      };
     case CHANGE_INPUT:
       return { ...state, input: action.input }; //얕은복사로 괜찮은지 확인하기
     case ADD:

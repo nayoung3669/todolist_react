@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { styled } from "styled-components";
-import { changeInput, remove, toggle } from "../redux/modules/todos";
+import { changeInput, remove, toggle, edit } from "../redux/modules/todos";
 import {
   backIcon,
   confirmIcon,
@@ -97,19 +97,20 @@ const TodoItemDetail = ({ id }) => {
     navigate("/");
   };
 
-  const onChangeInput = (e) => {
-    const { name, value } = e.target;
-    const updatedTodoItem = { ...todoItem, [name]: value };
 
-    dispatch(changeInput(updatedTodoItem));
+  const onChangeInput = (e) => {
+    console.log(todoItem)
+    console.log(`name: ${e.target.name} / value: ${e.target.value}`)
+    const { name, value } = e.target;
+    dispatch(edit(todoItem.id, name, value));
   };
+
 
   const onConfirm = () => {
     navigate(`/${todoItem.id}`);
     setEditing(false);
   };
 
-  console.log(todoItem);
 
   if (editing) {
     return (
