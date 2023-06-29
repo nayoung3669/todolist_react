@@ -179,6 +179,17 @@ const DetailBlock = styled.div`
       top: 78%;
       left: 78%;
     }
+    .titleEdit {
+      width: 200px;
+      font-size: 1rem;
+      height: 30px;
+    }
+
+    .textEdit {
+      width: 250px;
+      font-size: 0.8rem;
+      height: 60px;
+    }
 
     .home {
       position: absolute;
