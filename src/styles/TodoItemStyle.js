@@ -84,8 +84,7 @@ export const TodoItemBlock = styled.div`
       font-size: 0.4rem;
     }
     .icons {
-      left: 50%;
-    }
+      left: 25%;
   }
 
   @keyframes vibration {

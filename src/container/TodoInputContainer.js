@@ -27,7 +27,7 @@ const TodoInputContainerBlock = styled.div`
 
   @media screen and (max-width: 1180px) {
     flex-direction: column;
-    width: 500px;
+    width: 400px;
   }
 `;
 
