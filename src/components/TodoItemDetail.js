@@ -13,6 +13,83 @@ import {
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+const TodoItemDetail = ({ id }) => {
+  const [editing, setEditing] = useState(false);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const todos = useSelector(({ todos }) => todos.todos);
+  const todoItem = todos.find((todo) => todo.id === Number(id));
+
+  const onRemove = (id) => {
+    dispatch(remove(id));
+    navigate("/");
+  };
+  const onToggle = (id) => {
+    dispatch(toggle(id));
+    navigate("/");
+  };
+
+  const onChangeInput = (e) => {
+    const { name, value } = e.target;
+    const updatedTodoItem = { ...todoItem, [name]: value };
+    dispatch(edit(updatedTodoItem));
+  };
+
+  const onConfirm = () => {
+    navigate(`/${todoItem.id}`);
+    setEditing(false);
+  };
+
+  if (editing) {
+    return (
+      <DetailBlock>
+        <input
+          className="titleEdit"
+          name="title"
+          type="text"
+          value={todoItem.title}
+          onChange={onChangeInput}
+        />
+        <input
+          className="textEdit"
+          name="text"
+          type="text"
+          value={todoItem.text}
+          onChange={onChangeInput}
+        />
+        <div className="confirm" onClick={onConfirm}>
+          {confirmIcon()}
+        </div>
+      </DetailBlock>
+    );
+  }
+
+  return (
+    <DetailBlock>
+      <div className="textBox">
+        <p className="title">{todoItem.title}</p>
+        <p className="text">{todoItem.text}</p>
+      </div>
+      <div className="home" onClick={() => navigate("/")}>
+        {homeIcon()}
+      </div>
+      <div className="edit" onClick={() => setEditing(true)}>
+        {editIcon()}
+      </div>
+      <div className="icons">
+        <div className="delete" onClick={() => onRemove(todoItem.id)}>
+          {trashIcon()}
+        </div>
+        <div className="done" onClick={() => onToggle(todoItem.id)}>
+          {todoItem.done === true ? backIcon() : doneIcon()}
+        </div>
+      </div>
+    </DetailBlock>
+  );
+};
+
+export default TodoItemDetail;
+
 const DetailBlock = styled.div`
   display: flex;
   flex-direction: column;
@@ -111,80 +188,3 @@ const DetailBlock = styled.div`
     }
   }
 `;
-
-const TodoItemDetail = ({ id }) => {
-  const [editing, setEditing] = useState(false);
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
-  const todos = useSelector(({ todos }) => todos.todos);
-  const todoItem = todos.find((todo) => todo.id === Number(id));
-
-  const onRemove = (id) => {
-    dispatch(remove(id));
-    navigate("/");
-  };
-  const onToggle = (id) => {
-    dispatch(toggle(id));
-    navigate("/");
-  };
-
-  const onChangeInput = (e) => {
-    const { name, value } = e.target;
-    const updatedTodoItem = { ...todoItem, [name]: value };
-    dispatch(edit(updatedTodoItem)); // action creator -> edit으로 수정
-  };
-
-  const onConfirm = () => {
-    navigate(`/${todoItem.id}`);
-    setEditing(false);
-  };
-
-  if (editing) {
-    return (
-      <DetailBlock>
-        <input
-          className="titleEdit"
-          name="title"
-          type="text"
-          value={todoItem.title}
-          onChange={onChangeInput}
-        />
-        <input
-          className="textEdit"
-          name="text"
-          type="text"
-          value={todoItem.text}
-          onChange={onChangeInput}
-        />
-        <div className="confirm" onClick={onConfirm}>
-          {confirmIcon()}
-        </div>
-      </DetailBlock>
-    );
-  }
-
-  return (
-    <DetailBlock>
-      <div className="textBox">
-        <p className="title">{todoItem.title}</p>
-        <p className="text">{todoItem.text}</p>
-      </div>
-      <div className="home" onClick={() => navigate("/")}>
-        {homeIcon()}
-      </div>
-      <div className="edit" onClick={() => setEditing(true)}>
-        {editIcon()}
-      </div>
-      <div className="icons">
-        <div className="delete" onClick={() => onRemove(todoItem.id)}>
-          {trashIcon()}
-        </div>
-        <div className="done" onClick={() => onToggle(todoItem.id)}>
-          {todoItem.done === true ? backIcon() : doneIcon()}
-        </div>
-      </div>
-    </DetailBlock>
-  );
-};
-
-export default TodoItemDetail;

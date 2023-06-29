@@ -1,6 +1,19 @@
 import React from "react";
 import { styled } from "styled-components";
 
+const TodoInput = ({ title, text, onChange }) => {
+  return (
+    <TodoInputBlock>
+      <p>할 일:</p>
+      <input type="text" name="title" value={title} onChange={onChange} />
+      <p>설명: </p>
+      <input type="text" name="text" value={text} onChange={onChange} />
+    </TodoInputBlock>
+  );
+};
+
+export default React.memo(TodoInput);
+
 const TodoInputBlock = styled.div`
   display: flex;
   align-items: center;
@@ -35,16 +48,3 @@ const TodoInputBlock = styled.div`
     }
   }
 `;
-
-const TodoInput = ({ title, text, onChange }) => {
-  return (
-    <TodoInputBlock>
-      <p>할 일:</p>
-      <input type="text" name="title" value={title} onChange={onChange} />
-      <p>설명: </p>
-      <input type="text" name="text" value={text} onChange={onChange} />
-    </TodoInputBlock>
-  );
-};
-
-export default React.memo(TodoInput);

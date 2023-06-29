@@ -2,6 +2,22 @@ import { css, styled } from "styled-components";
 import Sidebar from "../components/Sidebar";
 import { useParams } from "react-router-dom";
 
+const TodoTemplate = ({ children }) => {
+  const { id } = useParams();
+
+  return (
+    <TemplateBlock>
+      {isNaN(id) && <Sidebar />}
+      <div className="todoTitle">
+        <p>투두 리스트</p>
+      </div>
+      <div className="content">{children}</div>
+    </TemplateBlock>
+  );
+};
+
+export default TodoTemplate;
+
 const TemplateBlock = styled.div`
   display: flex;
   flex-direction: row;
@@ -84,19 +100,3 @@ const TemplateBlock = styled.div`
     }
   }
 `;
-
-const TodoTemplate = ({ children }) => {
-  const { id } = useParams();
-
-  return (
-    <TemplateBlock>
-      {isNaN(id) && <Sidebar />}
-      <div className="todoTitle">
-        <p>투두 리스트</p>
-      </div>
-      <div className="content">{children}</div>
-    </TemplateBlock>
-  );
-};
-
-export default TodoTemplate;

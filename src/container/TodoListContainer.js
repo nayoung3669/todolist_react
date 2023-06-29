@@ -1,34 +1,9 @@
 import { styled } from "styled-components";
-import TodoItem from "../components/TodoItem";
+import { TodoItem } from "../components";
 import { useDispatch, useSelector } from "react-redux";
 import { remove, toggle } from "../redux/modules/todos";
-
-const ListBlock = styled.div`
-  width: 90%;
-  border-bottom: 1px solid lightgray;
-  height: 360px;
-  .progress {
-    padding-left: 20px;
-    margin-top: 30px;
-    font-size: 1.5rem;
-    text-align: start;
-  }
-  .todos {
-    width: 100%;
-    height: 80%;
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 40px;
-    flex-wrap: wrap;
-    overflow-y: scroll;
-    &::-webkit-scrollbar {
-      display: none;
-    }
-  }
-  .todos:nth-child(even) {
-    background-color: #f6f6f6;
-  }
-`;
+import React from "react";
+import { useCallback } from "react";
 
 const workingText = "Working...✍🏻";
 const doneText = "Done ! 🎉";
@@ -37,8 +12,8 @@ const TodoListContainer = () => {
   const dispatch = useDispatch();
   const todos = useSelector(({ todos }) => todos.todos);
 
-  const onRemove = (id) => dispatch(remove(id));
-  const onToggle = (id) => dispatch(toggle(id));
+  const onRemove = useCallback((id) => dispatch(remove(id)), [dispatch]);
+  const onToggle = useCallback((id) => dispatch(toggle(id)), [dispatch]);
 
   return (
     <>
@@ -70,4 +45,31 @@ const TodoListContainer = () => {
   );
 };
 
-export default TodoListContainer;
+export default React.memo(TodoListContainer);
+
+const ListBlock = styled.div`
+  width: 90%;
+  border-bottom: 1px solid lightgray;
+  height: 360px;
+  .progress {
+    padding-left: 20px;
+    margin-top: 30px;
+    font-size: 1.5rem;
+    text-align: start;
+  }
+  .todos {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+  .todos:nth-child(even) {
+    background-color: #f6f6f6;
+  }
+`;
