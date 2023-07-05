@@ -32,7 +32,7 @@ const TodoInputContainer = () => {
         onChange={onChangeInput}
         onAdd={onAdd}
       />
-      <button onClick={onAdd}>추가</button>
+      <button onClick={onAdd}>ADD</button>
     </TodoInputContainerBlock>
   );
 };
