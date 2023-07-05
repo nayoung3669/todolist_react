@@ -45,11 +45,17 @@ export const TodoItemBlock = styled.div`
   }
   .title {
     font-size: 1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .text {
     font-weight: 500;
     font-size: 0.8rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .icons {

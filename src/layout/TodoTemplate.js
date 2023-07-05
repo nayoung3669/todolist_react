@@ -44,7 +44,7 @@ const TemplateBlock = styled.div`
     background-color: #7a7a7a;
     font-size: 1rem;
     font-weight: 600;
-    width: 200px;
+    min-width: 194px;
 
     ${(props) => {
       props.detailed &&
