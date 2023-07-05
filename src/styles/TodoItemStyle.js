@@ -44,16 +44,20 @@ export const TodoItemBlock = styled.div`
     margin: 10px;
   }
   .title {
-    font-size: 1rem;
-    white-space: nowrap;
+    font-size: 0.8rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
   }
 
   .text {
     font-weight: 500;
-    font-size: 0.8rem;
-    white-space: nowrap;
+    font-size: 0.7rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
   }
@@ -61,7 +65,7 @@ export const TodoItemBlock = styled.div`
   .icons {
     position: absolute;
     top: 76%;
-    left: 72%;
+    left: 68%;
     display: flex;
     justify-content: space-between;
 
@@ -83,11 +87,12 @@ export const TodoItemBlock = styled.div`
     }
 
     .title {
-      font-size: 0.7rem;
+      font-size: 0.6rem;
     }
 
     .text {
-      font-size: 0.4rem;
+      font-size: 0.2rem;
+      flex-wrap: wrap;
     }
     .icons {
       left: 25%;

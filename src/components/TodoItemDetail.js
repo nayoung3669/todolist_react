@@ -151,11 +151,21 @@ const DetailBlock = styled.div`
   }
 
   .title {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   .text {
-    font-size: 1.2rem;
-    margin: 30px 0px 0px 30px;
+    font-size: 1.1rem;
+    margin: 10px 0px 0px 30px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .home {
