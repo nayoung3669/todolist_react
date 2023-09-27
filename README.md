@@ -1,15 +1,10 @@
 # React Todo-List ✍🏻
 
-### 배포: https://todolist-react-jade.vercel.app/
-
 #### 🕚 Project execution period: 2023.06.27 ~ 2023.06.29
 
 #### ⚙️ Tools: React, Redux, JavaScript, Styled-component, CSS, HTML
 
 <br />
-
-### 팀원 : 김나영 [@nayoung3669](https://github.com/nayoung3669), 김태현 [@taehyunkim3](https://github.com/taehyunkim3)
-
 #### 회고: (김나영) https://nayoungkim00.tistory.com/91
 
 <br />
