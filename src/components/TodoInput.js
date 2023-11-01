@@ -1,13 +1,27 @@
 import React from "react";
+import Calendar from "react-calendar";
 import { styled } from "styled-components";
 
-const TodoInput = ({ title, text, onChange }) => {
+const TodoInput = ({ title, text, date, onChangeInput, onChangeDate }) => {
   return (
     <TodoInputBlock>
-      <p>할 일:</p>
-      <input type="text" name="title" value={title} onChange={onChange} />
-      <p>설명: </p>
-      <input type="text" name="text" value={text} onChange={onChange} />
+      <div className="inputs">
+        <p>할 일:</p>
+        <input
+          type="text"
+          name="title"
+          value={title}
+          onChange={onChangeInput}
+        />
+        <p>설명: </p>
+        <input type="text" name="text" value={text} onChange={onChangeInput} />
+      </div>
+      <div className="date">
+        <p> 날짜 선택</p>
+        <div className="calendar">
+          <Calendar onChange={onChangeDate} value={date} />
+        </div>
+      </div>
     </TodoInputBlock>
   );
 };
@@ -15,20 +29,33 @@ const TodoInput = ({ title, text, onChange }) => {
 export default React.memo(TodoInput);
 
 const TodoInputBlock = styled.div`
+  position: relative;
   display: flex;
-  align-items: center;
-  height: 65px;
-  width: 95%;
-  margin-left: 10px;
+  flex-direction: column;
+  margin-top: 40px;
+  gap: 20px;
+
+  .inputs {
+    display: flex;
+    align-items: center;
+  }
+
+  .date {
+    display: flex;
+    margin: 0 150px 0 150px;
+  }
+  .calendar {
+    width: 290px;
+    margin: auto;
+  }
 
   p {
-    width: 60px;
-    font-size: 1rem;
+    width: 100px;
     margin-right: 10px;
   }
 
   input {
-    margin-right: 4rem;
+    margin-right: 2rem;
     width: 14rem;
     height: 30px;
     border-radius: 15px;
@@ -36,15 +63,5 @@ const TodoInputBlock = styled.div`
   }
   & + & {
     margin-left: 20px;
-  }
-
-  @media screen and (max-width: 1180px) {
-    width: 90%;
-    margin: 0;
-
-    input {
-      margin: 0;
-      margin-right: 15px;
-    }
   }
 `;

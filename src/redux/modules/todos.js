@@ -33,8 +33,8 @@ const initialState = {
   todos: [
     {
       id: 1,
-      title: "리액트 숙련주차 강의 🔥",
-      text: "들으면서 메모하기 ",
+      title: "리액트 강의 ",
+      text: "메모하기 ",
       done: false,
     },
     {
@@ -45,20 +45,20 @@ const initialState = {
     },
     {
       id: 3,
-      title: "TIL 작성하기!",
-      text: "오늘 자정까지 완료 📑",
+      title: "TIL",
+      text: "오늘 자정까지 📑",
       done: false,
     },
     {
       id: 4,
-      title: "WIL 작성하기 💻",
+      title: "WIL 💻",
       text: "Virtual DOM 조사하기",
       done: true,
     },
     {
       id: 5,
       title: "비동기처리 공부 ✍🏻",
-      text: "블로그 기록하기",
+      text: " 기록하기",
       done: false,
     },
   ],

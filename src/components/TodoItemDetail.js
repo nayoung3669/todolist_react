@@ -175,7 +175,7 @@ const DetailBlock = styled.div`
     right: -30%;
   }
 
-  @media screen and (max-width: 1180px) {
+  /* @media screen and (max-width: 1180px) {
     width: 18rem;
     height: 10rem;
     .title {
@@ -206,6 +206,6 @@ const DetailBlock = styled.div`
       top: -200%;
       right: -10%;
       cursor: pointer;
-    }
+    } */
   }
 `;

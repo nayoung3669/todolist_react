@@ -1,15 +1,12 @@
 import { css, styled } from "styled-components";
 import Sidebar from "../components/Sidebar";
-import { useParams } from "react-router-dom";
 
 const TodoTemplate = ({ children }) => {
-  const { id } = useParams();
-
   return (
     <TemplateBlock>
-      {isNaN(id) && <Sidebar />}
+      {/* {isNaN(id) && <Sidebar />} */}
       <div className="todoTitle">
-        <p>투두 리스트</p>
+        <p>TODO LIST</p>
       </div>
       <div className="content">{children}</div>
     </TemplateBlock>
@@ -19,13 +16,13 @@ const TodoTemplate = ({ children }) => {
 export default TodoTemplate;
 
 const TemplateBlock = styled.div`
+  border: 1.5px solid gray;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  position: relative;
   background-color: #f6f6f6;
-  width: 1020px;
+  width: 880px;
+  margin-top: 30px;
   height: 1040px;
   border-radius: 15px;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
@@ -44,7 +41,6 @@ const TemplateBlock = styled.div`
     background-color: #7a7a7a;
     font-size: 1rem;
     font-weight: 600;
-    min-width: 194px;
 
     ${(props) => {
       props.detailed &&
@@ -55,7 +51,6 @@ const TemplateBlock = styled.div`
   }
 
   .todoTitle {
-    position: absolute;
     text-align: center;
     top: 0.3%;
     width: 100%;
@@ -74,7 +69,7 @@ const TemplateBlock = styled.div`
     background-color: ;
   }
 
-  @media screen and (max-width: 1180px) {
+  /* @media screen and (max-width: 1180px) {
     flex-direction: column;
     width: 400px;
     overflow-y: scroll;
@@ -84,12 +79,10 @@ const TemplateBlock = styled.div`
 
     .todoTitle {
       margin: 0;
-      /* top: 9%; */
       font-size: 1.4rem;
     }
 
     .sidebar {
-      /* margin-top: 190px; */
       width: 100%;
       height: 86px;
       gap: 0px;
@@ -97,6 +90,6 @@ const TemplateBlock = styled.div`
       border-radius: 0;
       padding-top: 10px;
       margin-bottom: 10px;
-    }
+    } */
   }
 `;

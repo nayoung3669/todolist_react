@@ -1,38 +1,50 @@
-import React, { useCallback } from "react";
+import React, { useCallback, useState } from "react";
 import { TodoInput } from "../components";
-import { useSelector, useDispatch } from "react-redux";
-import { add, changeInput } from "../redux/modules/todos";
 import { styled } from "styled-components";
+import { addTodo } from "../api/todos";
 
 const TodoInputContainer = () => {
-  const dispatch = useDispatch();
-  const input = useSelector(({ todos }) => todos.input);
+  const [data, setData] = useState({
+    id: "",
+    title: "",
+    text: "",
+    date: new Date(),
+    done: false,
+  });
 
   const onChangeInput = (e) => {
     const { name, value } = e.target;
-    const newInput = {
-      ...input,
-      [name]: value,
-    };
-    dispatch(changeInput(newInput));
+    setData({ ...data, [name]: value });
   };
 
-  const onAdd = useCallback(() => {
-    input.title === "" || input.text === ""
-      ? alert("내용을 입력해주세요!")
-      : dispatch(add(input));
-    dispatch(changeInput({ title: "", text: "" }));
-  }, [dispatch, input]);
+  const onChangeDate = (e) => {
+    let formattedDate = e.toISOString().split("T")[0];
+    setData({ ...data, date: formattedDate });
+  };
+
+  const onAdd = async () => {
+    console.log(data);
+    try {
+      const res = await addTodo(data);
+      console.log(res);
+    } catch (e) {
+      console.log(e);
+    }
+  };
 
   return (
     <TodoInputContainerBlock>
       <TodoInput
-        title={input.title}
-        text={input.text}
-        onChange={onChangeInput}
+        title={data.title}
+        text={data.text}
+        datee={data.date}
+        onChangeInput={onChangeInput}
+        onChangeDate={onChangeDate}
         onAdd={onAdd}
       />
-      <button onClick={onAdd}>ADD</button>
+      <button className="addBtn" onClick={onAdd}>
+        ADD
+      </button>
     </TodoInputContainerBlock>
   );
 };
@@ -41,27 +53,26 @@ export default TodoInputContainer;
 
 const TodoInputContainerBlock = styled.div`
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
-  width: 80%;
+  width: 65%;
 
-  button {
+  .addBtn {
     font-family: "Gowun Dodum", sans-serif;
+    width: 200px;
+    height: 30px;
+    margin-top: 20px;
     cursor: pointer;
-    margin-right: 20px;
-    margin-bottom: 2px;
-    height: 36px;
-    width: 5rem;
     border-radius: 15px;
     border: none;
-    font-size: 1rem;
     font-weight: 600;
     background-color: #5d5d5d;
     color: white;
   }
 
-  @media screen and (max-width: 1180px) {
+  /* @media screen and (max-width: 1180px) {
     flex-direction: column;
     width: 400px;
-  }
+  } */
 `;

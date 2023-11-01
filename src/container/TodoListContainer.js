@@ -24,7 +24,12 @@ const TodoListContainer = () => {
             .filter((todo) => todo.done === false)
             .map((todo) => {
               return (
-                <TodoItem todo={todo} onRemove={onRemove} onToggle={onToggle} />
+                <TodoItem
+                  key={todo.id}
+                  todo={todo}
+                  onRemove={onRemove}
+                  onToggle={onToggle}
+                />
               );
             })}
         </div>
@@ -36,7 +41,12 @@ const TodoListContainer = () => {
             .filter((todo) => todo.done === true)
             .map((todo) => {
               return (
-                <TodoItem todo={todo} onRemove={onRemove} onToggle={onToggle} />
+                <TodoItem
+                  key={todo.id}
+                  todo={todo}
+                  onRemove={onRemove}
+                  onToggle={onToggle}
+                />
               );
             })}
         </div>
@@ -52,17 +62,18 @@ const ListBlock = styled.div`
   border-bottom: 1px solid lightgray;
   height: 360px;
   .progress {
-    padding-left: 20px;
+    padding-left: 50px;
     margin-top: 30px;
     font-size: 1.5rem;
     text-align: start;
   }
   .todos {
-    width: 100%;
+    margin: 0px 20px 0px 20px;
+    width: 95%;
     height: 80%;
     display: flex;
     flex-direction: row;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     flex-wrap: wrap;
     overflow-y: scroll;
     &::-webkit-scrollbar {
