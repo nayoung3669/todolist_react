@@ -5,9 +5,6 @@
 #### ⚙️ Tools: React, Redux, JavaScript, Styled-component, CSS, HTML
 
 <br />
-#### 회고: (김나영) https://nayoungkim00.tistory.com/91
-
-<br />
 
 #### 모바일 ver.
 
